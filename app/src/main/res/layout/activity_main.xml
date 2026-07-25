@@ -35,7 +35,7 @@
             android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="@string/app_subtitle"
-            android:textColor="#66718A" />
+            android:textColor="@color/text_secondary" />
 
         <LinearLayout
             android:id="@+id/modeControl"
@@ -57,7 +57,7 @@
                 android:focusable="true"
                 android:gravity="center"
                 android:text="@string/single_dice"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/text_on_accent"
                 android:textSize="14sp" />
 
             <TextView
@@ -82,7 +82,7 @@
             app:cardBackgroundColor="@color/surface_card"
             app:cardCornerRadius="28dp"
             app:cardElevation="3dp"
-            app:strokeColor="#E3E9F4"
+            app:strokeColor="@color/outline_soft"
             app:strokeWidth="1dp">
 
             <FrameLayout
@@ -129,7 +129,7 @@
             android:focusable="true"
             android:gravity="center"
             android:text="@string/roll_dice"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/text_on_accent"
             android:textSize="18sp" />
     </LinearLayout>
 </ScrollView>

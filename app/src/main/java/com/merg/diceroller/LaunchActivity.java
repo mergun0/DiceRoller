@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.splashscreen.SplashScreen;
 
 public final class LaunchActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public final class LaunchActivity extends AppCompatActivity {
     };
 
     @Override protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);

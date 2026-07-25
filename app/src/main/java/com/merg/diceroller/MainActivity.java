@@ -1,6 +1,5 @@
 package com.merg.diceroller;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private MainUiState latestState;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -119,8 +120,10 @@ public class MainActivity extends AppCompatActivity {
         doubleModeButton.setEnabled(!rolling);
         singleModeButton.setBackgroundResource(single ? R.drawable.mode_pill_selected_bg : R.drawable.mode_pill_unselected_bg);
         doubleModeButton.setBackgroundResource(single ? R.drawable.mode_pill_unselected_bg : R.drawable.mode_pill_selected_bg);
-        singleModeButton.setTextColor(single ? Color.WHITE : getColor(R.color.primary_navy));
-        doubleModeButton.setTextColor(single ? getColor(R.color.primary_navy) : Color.WHITE);
+        int selectedText = getColor(R.color.text_on_accent);
+        int unselectedText = getColor(R.color.primary_navy);
+        singleModeButton.setTextColor(single ? selectedText : unselectedText);
+        doubleModeButton.setTextColor(single ? unselectedText : selectedText);
         singleModeButton.setAlpha(rolling ? 0.62f : 1f);
         doubleModeButton.setAlpha(rolling ? 0.62f : 1f);
     }

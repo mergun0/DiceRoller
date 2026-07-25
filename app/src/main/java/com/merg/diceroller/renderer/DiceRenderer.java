@@ -1,6 +1,7 @@
 package com.merg.diceroller.renderer;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
@@ -108,7 +109,7 @@ public final class DiceRenderer implements GLSurfaceView.Renderer {
     }
 
     @Override public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        GLES20.glClearColor(0.965f, 0.975f, 0.992f, 1f);
+        applyClearColor();
         GLES20.glEnable(GLES20.GL_DEPTH_TEST);
         GLES20.glEnable(GLES20.GL_BLEND);
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
@@ -131,6 +132,7 @@ public final class DiceRenderer implements GLSurfaceView.Renderer {
 
     @Override public void onDrawFrame(GL10 gl) {
         textures.setTheme(theme);
+        applyClearColor();
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
         updateAnimation();
         drawShadow();
@@ -227,6 +229,15 @@ public final class DiceRenderer implements GLSurfaceView.Renderer {
     private static float easeOutCubic(float t) {
         float p = 1f - t;
         return 1f - p * p * p;
+    }
+
+    private void applyClearColor() {
+        int night = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        if (night == Configuration.UI_MODE_NIGHT_YES) {
+            GLES20.glClearColor(0.086f, 0.125f, 0.200f, 1f);
+        } else {
+            GLES20.glClearColor(0.965f, 0.975f, 0.992f, 1f);
+        }
     }
 
     private void configureRoll(DieState die, int value, AnimationSpeed speed, long now, boolean secondary) {

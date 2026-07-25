@@ -9,5 +9,11 @@
     <color name="secondary_soft">#DDE4F2</color>
     <color name="text_primary">#172033</color>
     <color name="text_secondary">#66718A</color>
+    <color name="text_on_accent">#FFFFFF</color>
+    <color name="outline_soft">#E3E9F4</color>
+    <color name="roll_button">#2A3F74</color>
+    <color name="roll_button_pressed">#1E2A44</color>
+    <color name="roll_button_disabled">#CCD3E2</color>
+    <color name="mode_control_surface">#DDE4F2</color>
     <color name="splash_background">#F5F7FB</color>
 </resources>
