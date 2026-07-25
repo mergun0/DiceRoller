@@ -8,5 +8,6 @@
     <color name="primary_indigo">#2A3F74</color>
     <color name="secondary_soft">#DDE4F2</color>
     <color name="text_primary">#172033</color>
+    <color name="text_secondary">#66718A</color>
     <color name="splash_background">#F5F7FB</color>
 </resources>

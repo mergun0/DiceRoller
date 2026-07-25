@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Zar At</string>
+    <string name="developer_credit">Mergun tarafından geliştirildi</string>
+    <string name="version_format">v%1$s</string>
     <string name="app_subtitle">Tek dokunuşla 3D zar deneyimi</string>
     <string name="roll_dice">Zar At</string>
     <string name="single_dice">Tek Zar</string>

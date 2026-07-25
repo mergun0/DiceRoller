@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Dice Roller</string>
+    <string name="developer_credit">Developed by Mergun</string>
+    <string name="version_format">v%1$s</string>
     <string name="app_subtitle">A calm 3D roll in one tap</string>
     <string name="roll_dice">Roll Dice</string>
     <string name="single_dice">Single Die</string>

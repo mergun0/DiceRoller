@@ -6,7 +6,17 @@
         <item name="colorSurface">@color/app_background_dark</item>
         <item name="colorOnSurface">#F7F8FC</item>
         <item name="android:fontFamily">sans</item>
+        <item name="android:statusBarColor">@color/app_background_dark</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/app_background_dark</item>
+    </style>
+    <style name="Theme.DiceRoller.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_brand_dice</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/surface_card_dark</item>
+        <item name="postSplashScreenTheme">@style/Theme.DiceRoller</item>
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
