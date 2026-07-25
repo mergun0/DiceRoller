@@ -1,0 +1,18 @@
+<resources>
+    <style name="Base.Theme.DiceRoller" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_indigo</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/secondary_soft</item>
+        <item name="colorSurface">@color/app_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/app_background</item>
+    </style>
+    <style name="Theme.DiceRoller" parent="Base.Theme.DiceRoller" />
+    <style name="Theme.DiceRoller.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground_vector</item>
+        <item name="postSplashScreenTheme">@style/Theme.DiceRoller</item>
+    </style>
+</resources>

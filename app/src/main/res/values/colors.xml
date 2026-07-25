@@ -1,0 +1,12 @@
+<resources>
+    <color name="seed">#2A3F74</color>
+    <color name="app_background">#F5F7FB</color>
+    <color name="app_background_dark">#0F1724</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_card_dark">#162033</color>
+    <color name="primary_navy">#1E2A44</color>
+    <color name="primary_indigo">#2A3F74</color>
+    <color name="secondary_soft">#DDE4F2</color>
+    <color name="text_primary">#172033</color>
+    <color name="splash_background">#F5F7FB</color>
+</resources>
