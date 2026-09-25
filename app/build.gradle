@@ -2,6 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+def releaseSigningProperties = new Properties()
+def releaseSigningPropertiesFile = rootProject.file("keystore/release-signing.properties")
+if (releaseSigningPropertiesFile.exists()) {
+    releaseSigningPropertiesFile.withInputStream { releaseSigningProperties.load(it) }
+}
+
+def releaseStoreFile = releaseSigningProperties.getProperty("storeFile") ?: System.getenv("DICEROLLER_STORE_FILE")
+def releaseStorePassword = releaseSigningProperties.getProperty("storePassword") ?: System.getenv("DICEROLLER_STORE_PASSWORD")
+def releaseKeyAlias = releaseSigningProperties.getProperty("keyAlias") ?: System.getenv("DICEROLLER_KEY_ALIAS")
+def releaseKeyPassword = releaseSigningProperties.getProperty("keyPassword") ?: System.getenv("DICEROLLER_KEY_PASSWORD")
+def hasReleaseSigning = releaseStoreFile && releaseStorePassword && releaseKeyAlias && releaseKeyPassword
+
 android {
     namespace 'com.merg.diceroller'
     compileSdk {
@@ -18,9 +30,23 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            if (hasReleaseSigning) {
+                storeFile file(releaseStoreFile)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
